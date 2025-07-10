@@ -1,155 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CineMóvil</title>
-<style>
-* {
-box-sizing: border-box;
-}
-
-body {
-margin: 0;
-font-family: 'Helvetica Neue', sans-serif;
-background-color: #000;
-color: #fff;
-}
-
-header {
-background-color: #000;
-padding: 1rem;
-text-align: center;
-}
-
-header h1 {
-margin: 0;
-font-size: 1.6rem;
-color: #e50914;
-letter-spacing: 1px;
-}
-
-#buscador {
-margin: 1rem;
-display: flex;
-justify-content: center;
-}
-
-#buscador input {
-width: 90%;
-padding: 0.6rem;
-font-size: 1rem;
-border: none;
-border-radius: 5px;
-background-color: #222;
-color: #fff;
-}
-
-main {
-padding: 1rem;
-}
-
-section {
-margin-bottom: 2rem;
-}
-
-h2 {
-border-left: 5px solid #e50914;
-padding-left: 0.5rem;
-margin-bottom: 1rem;
-font-size: 1.2rem;
-color: #fff;
-}
-
-.grid {
-display: flex;
-flex-wrap: wrap;
-gap: 1rem;
-justify-content: center;
-}
-
-.pelicula {
-width: 45%;
-background-color: transparent;
-border-radius: 10px;
-transition: transform 0.2s;
-}
-
-.pelicula:hover {
-transform: scale(1.02);
-}
-
-.pelicula img {
-width: 100%;
-border-radius: 10px;
-display: block;
-}
-
-.pelicula h3 {
-display: none; /* ocultamos el título */
-}
-
-.pelicula a {
-text-decoration: none;
-color: #fff;
-}
-
-@media (max-width: 500px) {
-.pelicula {
-width: 100%;
-}
-}
-</style>
+<link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-
 <header>
 <h1>CineMóvil</h1>
 </header>
 
-<div id="buscador">
-<input type="text" id="inputBusqueda" placeholder="Buscar película...">
-</div>
-
 <main>
-<section id="ultimas">
 <h2>Últimas añadidas</h2>
-
-<div class="grid">
-
-<div class="pelicula" data-nombre="Destino final lazos de sangre, Destino final: Lazos de sangre, Final Destination Bloodlines">
-<a href="Final-Destination Bloodlines.html">
-<img src="https://image.tmdb.org/t/p/original/nxm5x5LyXFP1Ba6MMbfhynzt8g2.jpg" alt="Destino final lazos de sangre (2025)">
-<h3>Destino final: lazos de sangre (2025)</h3>
-</a>
-</div>
-
-<div class="pelicula" data-nombre="El hombre lobo, the wolf man">
-<a href="el-hombre-lobo.html">
-<img src="https://image.tmdb.org/t/p/original/dXM0qoqk7SmDzSyRHCn3Hc08CKw.jpg" alt="El hombre lobo (1941)">
-<h3>El hombre lobo (1941)</h3>
-</a>
-</div>
-
-<!-- Más películas acá -->
-
-</div>
-</section>
+<div class="grid-peliculas" id="contenedor-peliculas"></div>
 </main>
 
-<script>
-const input = document.getElementById('inputBusqueda');
-
-input.addEventListener('input', () => {
-const filtro = input.value.toLowerCase();
-const peliculas = document.querySelectorAll('.pelicula');
-
-peliculas.forEach(peli => {
-const nombre = peli.getAttribute('data-nombre').toLowerCase();
-peli.style.display = nombre.includes(filtro) ? 'block' : 'none';
-});
-});
-</script>
-
+<script src="data.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
