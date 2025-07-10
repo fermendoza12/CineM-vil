@@ -5,7 +5,7 @@ const div = document.createElement("div");
 div.classList.add("pelicula");
 div.innerHTML = `
 <img src="${pelicula.imagen}" alt="${pelicula.titulo}" />
-<a class="btn-ver" href="${pelicula.enlace}" target="_blank">▶ Ver película</a>
+<a class="btn-ver" href="${pelicula.enlace}" target="_blank">Ver película</a>
 `;
 contenedorPeliculas.appendChild(div);
 });
