@@ -164,3 +164,34 @@ transition: background-color 0.2s;
 .buscador button:hover {
 background-color: #b00610;
 }
+.pelicula a {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 0.4rem;
+margin-top: 0.8rem;
+background-color: #e50914;
+color: #fff;
+padding: 0.5rem 0.8rem;
+font-size: 0.9rem;
+border: none;
+border-radius: 6px;
+text-align: center;
+text-decoration: none;
+transition: background-color 0.2s;
+width: 100%;
+max-width: 140px;
+}
+
+.pelicula a:hover {
+background-color: #b00610;
+}
+
+@media (max-width: 500px) {
+.pelicula a {
+padding: 0.4rem 0.6rem;
+font-size: 0.8rem;
+max-width: 100px;
+gap: 0.3rem;
+}
+}
